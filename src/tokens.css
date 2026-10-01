@@ -1,0 +1,128 @@
+/*
+ * Likho design tokens.
+ *
+ * Use in an app (Tailwind CSS v4):
+ *
+ *   @import "tailwindcss";
+ *   @import "@likho-ai/ui/tokens.css";
+ *   @source "../node_modules/@likho-ai/ui/dist";
+ *
+ * Dark mode: put class="dark" on <html>. Every token below has a dark value, so
+ * components never mention a theme themselves.
+ *
+ * The palette follows goask.me in both modes: a violet-to-indigo page with indigo text in
+ * light, near-black with pale blue text in dark, violet-to-indigo buttons, and an
+ * orange -> red -> lavender brand gradient for the logo, the mascot and the headline.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --likho-ground: #f5f3ff;
+  --likho-ground-image: linear-gradient(160deg, #f5f3ff 0%, #ede9fe 45%, #e0e7ff 100%);
+  --likho-surface: #ffffff;
+  --likho-surface-2: #eef2ff;
+  --likho-line: #e0e7ff;
+  --likho-line-strong: #a4b3ff;
+  --likho-ink: #1e1a4d;
+  --likho-ink-2: #4b4792;
+  --likho-ink-3: #5f5aa6;
+  --likho-accent: #7c3aed;
+  --likho-accent-strong: #5d0ec0;
+  --likho-accent-soft: #ede9fe;
+  --likho-on-accent: #ffffff;
+  --likho-active-row: #ddd6ff;
+  --likho-btn: linear-gradient(90deg, #7c3aed 0%, #5047e3 100%);
+  --likho-link: #4f39f6;
+  --likho-eyebrow: #c20039;
+  --likho-tag: #e0e7ff;
+  --likho-tag-ink: #432dd7;
+  --likho-wave: #c7d2ff;
+  --likho-mark: #fee685;
+  --likho-shadow: 0 10px 28px rgb(30 26 77 / 0.08);
+  /* The headline starts at coral in light mode: orange text on the pale page is too faint. */
+  --likho-headline-1: linear-gradient(90deg, #f9463f 0%, #ff2d58 100%);
+  --likho-headline-2: linear-gradient(90deg, #ff2d58 0%, #dc4f93 50%, #b872d1 100%);
+  --likho-brand: linear-gradient(90deg, #ff7f3f 0%, #ff5a4a 25%, #ff2d58 50%, #dc4f93 75%, #b872d1 100%);
+
+  --likho-status-new: #e0e7ff;
+  --likho-status-new-ink: #372aac;
+  --likho-status-queued: #fef3c6;
+  --likho-status-queued-ink: #7b3306;
+  --likho-status-transcribing: #ede9fe;
+  --likho-status-transcribing-ink: #5d0ec0;
+  --likho-status-done: #dcfce7;
+  --likho-status-done-ink: #016630;
+  --likho-status-failed: #ffe2e2;
+  --likho-status-failed-ink: #9f0712;
+}
+
+.dark {
+  --likho-ground: #0a0b14;
+  --likho-ground-image: none;
+  --likho-surface: #11142a;
+  --likho-surface-2: #1a1f3a;
+  --likho-line: #2b3158;
+  --likho-line-strong: #6d5fa8;
+  --likho-ink: #f8fbff;
+  --likho-ink-2: #d7def2;
+  --likho-ink-3: #9aa8c7;
+  --likho-accent: #8b5cf6;
+  --likho-accent-strong: #a78bfa;
+  --likho-accent-soft: #232950;
+  --likho-on-accent: #ffffff;
+  --likho-active-row: #232950;
+  --likho-btn: linear-gradient(90deg, #7c3aed 0%, #5047e3 100%);
+  --likho-link: #a78bfa;
+  --likho-eyebrow: #ff667f;
+  --likho-tag: #232950;
+  --likho-tag-ink: #d7def2;
+  --likho-wave: #2e3566;
+  --likho-mark: #5a4310;
+  --likho-shadow: 0 10px 28px rgb(0 0 0 / 0.22);
+  --likho-headline-1: linear-gradient(90deg, #ff7f3f 0%, #ff2d58 100%);
+  --likho-headline-2: linear-gradient(90deg, #ff2d58 0%, #dc4f93 50%, #b872d1 100%);
+  --likho-brand: linear-gradient(90deg, #ff7f3f 0%, #ff5a4a 25%, #ff2d58 50%, #dc4f93 75%, #b872d1 100%);
+
+  --likho-status-new: #232950;
+  --likho-status-new-ink: #d7def2;
+  --likho-status-queued: #45330a;
+  --likho-status-queued-ink: #ffd236;
+  --likho-status-transcribing: #2a1f5c;
+  --likho-status-transcribing-ink: #c4b4ff;
+  --likho-status-done: #0d3b24;
+  --likho-status-done-ink: #7bf1a8;
+  --likho-status-failed: #4a1620;
+  --likho-status-failed-ink: #ffa3a3;
+}
+
+@theme inline {
+  --color-ground: var(--likho-ground);
+  --color-surface: var(--likho-surface);
+  --color-surface-2: var(--likho-surface-2);
+  --color-line: var(--likho-line);
+  --color-line-strong: var(--likho-line-strong);
+  --color-ink: var(--likho-ink);
+  --color-ink-2: var(--likho-ink-2);
+  --color-ink-3: var(--likho-ink-3);
+  --color-accent: var(--likho-accent);
+  --color-accent-strong: var(--likho-accent-strong);
+  --color-accent-soft: var(--likho-accent-soft);
+  --color-on-accent: var(--likho-on-accent);
+  --color-active-row: var(--likho-active-row);
+  --color-link: var(--likho-link);
+  --color-eyebrow: var(--likho-eyebrow);
+  --color-tag: var(--likho-tag);
+  --color-tag-ink: var(--likho-tag-ink);
+  --color-wave: var(--likho-wave);
+  --color-mark: var(--likho-mark);
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-deva: "Noto Sans Devanagari", "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-input: 12px;
+  --radius-card: 20px;
+  --radius-dropzone: 28px;
+  --shadow-card: var(--likho-shadow);
+}
