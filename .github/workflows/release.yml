@@ -1,0 +1,28 @@
+# On a version tag: a GitHub release with the built package attached, so the web apps install it
+# by tarball URL (no registry account needed).
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: test "$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME#v}" || { echo "package.json version differs from the tag"; exit 1; }
+      - run: pnpm build && npm pack
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: likho-ai-ui-*.tgz
+          body: |
+            Install: `"@likho-ai/ui": "https://github.com/likho-ai/likho-ui/releases/download/${{ github.ref_name }}/likho-ai-ui-${{ github.ref_name }}.tgz"` (file name without the `v`).

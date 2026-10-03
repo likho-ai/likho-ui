@@ -5,6 +5,12 @@ Likho web app shares.
 
 ## Use in an app (Tailwind CSS v4)
 
+Every version tag has a GitHub release with the built package attached:
+
+```json
+"@likho-ai/ui": "https://github.com/likho-ai/likho-ui/releases/download/v0.1.0/likho-ai-ui-0.1.0.tgz"
+```
+
 ```css
 /* app.css */
 @import "tailwindcss";
