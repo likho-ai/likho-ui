@@ -11,7 +11,8 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'border border-transparent text-on-accent [background-image:var(--likho-btn)] hover:brightness-110',
+        primary:
+          'border border-transparent text-on-accent [background-image:var(--likho-btn)] hover:brightness-110',
         secondary: 'border border-line bg-surface text-ink hover:bg-surface-2',
         ghost: 'border border-transparent bg-transparent text-ink-2 hover:bg-surface-2',
       },
@@ -25,7 +26,8 @@ export const buttonVariants = cva(
   },
 );
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   /** Render the child element (for example a link) with the button's look. */
   asChild?: boolean;
   ref?: Ref<HTMLButtonElement>;

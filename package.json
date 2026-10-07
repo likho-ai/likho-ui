@@ -15,7 +15,8 @@
     "./assets/*": "./assets/*"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . && prettier --check \"src/**/*.{ts,tsx,css}\" \"test/**/*.{ts,tsx}\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"test/**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "build": "tsup && node -e \"require('node:fs').copyFileSync('src/tokens.css','dist/tokens.css')\"",
@@ -46,6 +47,7 @@
     "@vitejs/plugin-react": "^5.0.0",
     "eslint": "^9.20.0",
     "jsdom": "^26.0.0",
+    "prettier": "^3.9.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.1.0",
