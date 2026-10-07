@@ -146,7 +146,11 @@ describe('brand', () => {
   it('draws the check only when done and the sound waves only when listening', () => {
     const count = (pose: (typeof MASCOT_POSES)[number]) => {
       const { container, unmount } = render(<Mascot pose={pose} />);
-      const result = { circles: container.querySelectorAll('circle').length, greenCheck: container.querySelector('circle[fill="#17834A"]') !== null, waves: container.querySelector('g[stroke="#7C3AED"]') !== null };
+      const result = {
+        circles: container.querySelectorAll('circle').length,
+        greenCheck: container.querySelector('circle[fill="#17834A"]') !== null,
+        waves: container.querySelector('g[stroke="#7C3AED"]') !== null,
+      };
       unmount();
       return result;
     };
