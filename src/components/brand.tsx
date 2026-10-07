@@ -113,7 +113,14 @@ export function Mascot({ pose = 'idle', size = 132, decorative = false, ...props
       {pose === 'done' && (
         <>
           <circle cx="152" cy="152" r="21" fill="#17834A" stroke="#FFFFFF" strokeWidth="5" />
-          <path d="M142 152 l7 7 l13 -14" fill="none" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M142 152 l7 7 l13 -14"
+            fill="none"
+            stroke="#FFFFFF"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </>
       )}
     </svg>

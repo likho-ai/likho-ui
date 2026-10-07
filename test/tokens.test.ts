@@ -35,7 +35,20 @@ describe('tokens', () => {
   });
 
   it('maps every colour token that components use into the Tailwind theme', () => {
-    for (const name of ['ground', 'surface', 'surface-2', 'line', 'ink', 'ink-2', 'ink-3', 'accent', 'accent-soft', 'on-accent', 'tag', 'tag-ink']) {
+    for (const name of [
+      'ground',
+      'surface',
+      'surface-2',
+      'line',
+      'ink',
+      'ink-2',
+      'ink-3',
+      'accent',
+      'accent-soft',
+      'on-accent',
+      'tag',
+      'tag-ink',
+    ]) {
       expect(css).toContain(`--color-${name}: var(--likho-${name});`);
     }
   });
@@ -57,9 +70,12 @@ describe('tokens', () => {
       for (const stop of stops) expect(contrast(get('on-accent'), stop)).toBeGreaterThanOrEqual(4.5);
     });
 
-    it.each(['new', 'queued', 'transcribing', 'done', 'failed'])('status %s text on its chip is at least 4.5:1', (status) => {
-      expect(contrast(get(`status-${status}-ink`), get(`status-${status}`))).toBeGreaterThanOrEqual(4.5);
-    });
+    it.each(['new', 'queued', 'transcribing', 'done', 'failed'])(
+      'status %s text on its chip is at least 4.5:1',
+      (status) => {
+        expect(contrast(get(`status-${status}-ink`), get(`status-${status}`))).toBeGreaterThanOrEqual(4.5);
+      },
+    );
 
     it('tag text on its background is at least 4.5:1', () => {
       expect(contrast(get('tag-ink'), get('tag'))).toBeGreaterThanOrEqual(4.5);

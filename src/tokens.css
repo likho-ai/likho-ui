@@ -117,9 +117,9 @@
   --color-wave: var(--likho-wave);
   --color-mark: var(--likho-mark);
 
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-deva: "Noto Sans Devanagari", "DM Sans", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-deva: 'Noto Sans Devanagari', 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
   --radius-input: 12px;
   --radius-card: 20px;
